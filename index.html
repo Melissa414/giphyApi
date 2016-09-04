@@ -3,6 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Giphy API</title>
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link rel="stylesheet" type="text/javascript" href="assets/app.js">
+		<link href="https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|Raleway" rel="stylesheet">
+
 	<style type="text/css">
 		button, div, form,input{
 			margin: 15px;
@@ -12,64 +16,32 @@
 
 <body>
 
-<div container = 'container'>
-	<h1>Giphy Attack!</h1>
+	<div container = 'container'>
+		<h1>Giphy Attack!</h1>
 
-	<button data-giphy = "parks and rec">Parks and Rec</button>
-	<button data-giphy = "bob's burger">Bob's Burger</button>
-	<button data-giphy = "rick and morty">Rick and Morty</button>
-	<button data-giphy = "Full Metal Alchemist">Full Metal Alchemist</button>
+		<button data-giphy = "parks and rec">Parks and Rec</button>
+		<button data-giphy = "bob's burger">Bob's Burger</button>
+		<button data-giphy = "rick and morty">Rick and Morty</button>
+		<button data-giphy = "full metal alchemist">Full Metal Alchemist</button>
+		<button data-giphy = "the league">The League</button>
+		<button data-giphy = "stranger things">Stranger Things</button>
 
-	<div id = "gifsView"></div>
+		<div id = "gifsView"></div>
 
 
 <!-- Gifs get dumped here -->
 
-	<form id = 'giphy-form'>
-		<label for = 'giphy-input'> Whatcha looking for?</label>
-		<input type = 'text' id ='giphy-input'><br>
+		<form id = 'giphy-form'>
+			<label for = 'giphy-input'> Whatcha looking for?</label>
+			<input type = 'text' id ='giphy-input'><br>
 
 <!-- Button will trigger new gifs -->
-		<input id = 'addGiphy' type = 'submit' value = 'search'>
-	</form>
-</div>
+			<input id = 'addGiphy' type = 'submit' value = 'search'>
+	
+		</form>
+		<script src = 'http://code.jquery.com/jquery-2.1.3.min.js'></script>
+		<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Source+Sans+Pro" rel="stylesheet">
 
-	<script src = 'http://code.jquery.com/jquery-2.1.3.min.js'></script>
-	<script type="text/javascript">
-
-	$('button').on('click', function() {
-		var giphy = $(this).data('giphy');
-		var movie = $('#data-giphy').val();
-		var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + giphy + '&api_key=dc6zaTOxFJmzC&limit=10';
-
-		$.ajax({url: queryUrl, method: 'GET'}).done(function(response) {
-				// console.log(queryUrl);
-
-
-				var results = response.data;
-
-				for (var i = 0; i < results.length; i++) {
-					var giphyDiv = $('<div>');
-					giphyDiv.html(JSON.stringify(response));
-
-					$('#giphyData').append(giphyImage);
-
-					var p = $('<p>').text('Rating: ' + results[i].rating);
-
-					var giphyImage = $('img');
-					giphyImage.attr('src', results[i].images.fixed_height.url);
-
-					giphyDiv.append(p);
-					giphyDiv.append(giphyImage);
-
-					$('#gifsView').append(giphyDiv);
-			}
-		});
-	   return false;
-	});
-
-
-	</script>
-
+	</div>
 </body>
 </html>
