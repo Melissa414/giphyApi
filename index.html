@@ -15,15 +15,8 @@
     <!-- You dont need all of this extra space between your attributes and their values -->
     <!-- Dont do this data-giphy = "prop"  do this data-giphy="prop" -->
     <!-- Be consistent with your "" or '' stick to one -->
-		<button data-giphy="parks and rec">Parks and Rec</button>
-		<button data-giphy="bob's burger">Bob's Burger</button>
-		<button data-giphy="rick and morty">Rick and Morty</button>
-		<button data-giphy="full metal alchemist">Full Metal Alchemist</button>
-		<button data-giphy="the league">The League</button>
-		<button data-giphy="stranger things">Stranger Things</button>
-
-    <!-- Gifs get dumped here -->
-		<div id="gifsView"></div>
+    <!--  div for dynamic buttons -->
+    <div id="button-list"></div>
 
 		<form id="giphy-form">
 			<label for="giphy-input"> Whatcha looking for?</label>
@@ -31,6 +24,9 @@
       <!-- Button will trigger new gifs -->
 			<input id="addGiphy" type="submit" value="search">
 		</form>
+
+    <!-- move this below the form -->
+    <div id="gifsView"></div>
 
 	</div>
 
