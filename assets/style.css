@@ -1,7 +1,12 @@
 body{
-		font-family: 'Open Sans', sans-serif;
-		font-family: 'Lato', sans-serif;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-family: 'Raleway', sans-serif;
+  /*You are overwriting the body font */
+	font-family: 'Open Sans', sans-serif;
+	/*font-family: 'Lato', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Raleway', sans-serif;*/
+}
 
+/*this doesnt need to be in the html*/
+button, div, form,input{
+  margin: 15px;
 }
