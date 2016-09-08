@@ -1,6 +1,6 @@
 
 var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Metal Alchemist', 'The League', 'Stranger Things'];
-   
+
  function createButtons() {
    $('#button-list').empty();
    for (var i = 0; i < buttonList.length; i++) {
@@ -9,7 +9,7 @@ var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Meta
      $('#button-list').append(newBtn);
    }
  }
- 
+
  function addShowToButtonList(show){
    buttonList.push(show);
    createButtons();
@@ -17,23 +17,36 @@ var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Meta
  }
 	function getGiphyImages(showName){
 		$('#gifsView').empty();
-   
+
    		var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + showName + '&api_key=dc6zaTOxFJmzC&limit=10';
    		$.ajax({url: queryUrl, method:'GET'})
      		.done(function(response) {
-       		console.log(response);
-       
-       	var gifs = response.data;
-       
+       		// console.log(response);
+
+       var gifs = response.data;
+
+
        $.each(gifs, function(key, value){
-         
-         	var container = $('#gifsView'),
-         	gif = value,
-         	original_url = gif.images.original.url,
+
+         	var container = $('#gifsView');
+         	var gif = value;
+         	var original_url = gif.images.original.url;
 
          	newImage = $('<img>');
          	newImage.attr('src', original_url);
          	container.append(newImage);
+
+          p =  $('<p>');
+          p.text("Rating: " + gif.rating);
+          container.append(p)
+
+         //  for (var i = 0; i < gifs.length; i++){
+         //    var rating = gifs[i].rating;
+         //    var p = $('<p>').text("Rating: " + rating);
+         //    // rating.appendTo(p);
+         //    p.append(rating)
+
+         // };
        });
     });
  }
@@ -50,5 +63,5 @@ var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Meta
    	var showName = $(this).data('giphy')
   		 getGiphyImages(showName);
  });
-  
+
  createButtons();
