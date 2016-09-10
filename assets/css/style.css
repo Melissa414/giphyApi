@@ -3,14 +3,24 @@ body {
     font-family: 'Lato', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Raleway', sans-serif;
-    background-color: #f4ecdc;
+    background-color: #7F7F7F;
     border: 5px solid white;
     margin-top: 30px;
 }
 
 #button-list {
     margin: 20px;
-    butto
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
 }
 
 .giphybutton {
@@ -20,10 +30,12 @@ body {
 #giphy-form {
     margin: 30px;
     font-size: 20px;
+    text-align: center;
 }
 
 #addGiphy {
     margin-top: 10px;
+    margin-left: 26%;
 }
 
 img {
@@ -31,6 +43,12 @@ img {
     width: 35%;
     height: 35%;
     margin: 20px;
-    padding: 10px;
-    float: left;
+}
+
+p {
+    color: white;
+    display: inline;
+    list-style: circle;
+    margin: 20px;
+    background-color: #7F7F7F;
 }

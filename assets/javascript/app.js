@@ -40,7 +40,7 @@ function getGiphyImages(showName) {
                 p = $('<p>');
                 p.text('Rating: ' + gif.rating);
                 container.append(p)
-                // ('#gifsView').append(p);
+                    // ('#gifsView').append(p);
             });
         });
 };
