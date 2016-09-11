@@ -1,4 +1,7 @@
-var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Metal Alchemist', 'The League', 'Stranger Things'];
+var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Metal Alchemist', 'The League', 'Stranger Things'];;
+var dataStill;
+var dataAnimate;
+var dataGif;
 
 
 function createButtons() {
@@ -27,6 +30,7 @@ function getGiphyImages(showName) {
             var gifs = response.data;
 
 
+
             $.each(gifs, function(key, value) {
 
                 var container = $('#gifsView');
@@ -36,14 +40,27 @@ function getGiphyImages(showName) {
                 newImage = $('<img>');
                 newImage.attr('src', original_url);
                 container.append(newImage);
+                //
+           
+            if ( gif == 'dataStill'){
+                $(this).attr('src', $(this).data('dataAnimate'));
+                $(this).attr('dataGif', 'dataAnimate');
+            }else{
+                $(this).attr('src', $(this).data('dataStill'));
+                $(this).attr('dataGif', 'dataStill');
+            }
+
+
+
+
                 //added ratings
                 p = $('<p>');
                 p.text('Rating: ' + gif.rating);
-                container.append(p)
-                    // ('#gifsView').append(p);
+                container.append(p);
             });
         });
 };
+
 
 $('#addGiphy').on('click', function() {
     //added buttons after searching
@@ -57,5 +74,6 @@ $(document).on('click', '.giphybutton', function() {
     var showName = $(this).data('giphy')
     getGiphyImages(showName);
 });
+
 
 createButtons();

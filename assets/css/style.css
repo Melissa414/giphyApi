@@ -47,8 +47,11 @@ img {
 
 p {
     color: white;
-    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    display: list-item;
     list-style: circle;
     margin: 20px;
     background-color: #7F7F7F;
+    list-style-position: inside;
 }
