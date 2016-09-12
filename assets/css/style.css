@@ -3,7 +3,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Raleway', sans-serif;
-    background-color: #7F7F7F;
+    background-color: #566E8B;
     border: 5px solid white;
     margin-top: 30px;
 }
@@ -16,6 +16,8 @@ body {
 h1 {
     color: white;
     text-align: center;
+    border-bottom: solid;
+    border-bottom-width: 60%;
 }
 
 h2 {
@@ -52,6 +54,8 @@ p {
     display: list-item;
     list-style: circle;
     margin: 20px;
-    background-color: #7F7F7F;
-    list-style-position: inside;
+    background-color: #566E8B;
+    float: right;
+    margin-right: 100px;
+
 }

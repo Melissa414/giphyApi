@@ -1,7 +1,9 @@
 var buttonList = ['Parks and Rec', 'Bob\'s Burger', 'Rick and Morty', 'Full Metal Alchemist', 'The League', 'Stranger Things'];;
-var dataStill;
-var dataAnimate;
-var dataGif;
+var pausedGif;
+var playingGif;
+var currentGif;
+var newGif;
+
 
 
 function createButtons() {
@@ -40,27 +42,29 @@ function getGiphyImages(showName) {
                 newImage = $('<img>');
                 newImage.attr('src', original_url);
                 container.append(newImage);
-                //
-           
-            if ( gif == 'dataStill'){
-                $(this).attr('src', $(this).data('dataAnimate'));
-                $(this).attr('dataGif', 'dataAnimate');
-            }else{
-                $(this).attr('src', $(this).data('dataStill'));
-                $(this).attr('dataGif', 'dataStill');
-            }
-
-
-
-
                 //added ratings
                 p = $('<p>');
                 p.text('Rating: ' + gif.rating);
                 container.append(p);
+                //work in progress?
+                $.each(currentGif, function(index, value) {
+                    newGif.addClass('choice');
+                    newGif.attr('data-play', playingGif);
+                    newGif.attr('data-paused', pausedGif);
+                    ('#gifsView').append(gifs);
+                    //
+                });
             });
         });
 };
-
+//work in progress?
+$(document).click('.choice', function() {
+    $(this).attr('src', $(this).data('play'));
+});
+$(document).click('.choice', function() {
+        $(this).attr('src', $(this).data('paused'));
+    })
+    //
 
 $('#addGiphy').on('click', function() {
     //added buttons after searching

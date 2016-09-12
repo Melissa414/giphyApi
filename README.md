@@ -1,7 +1,7 @@
 #giphyAPI
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Do a search on your favorite TV shows and see all the amazin gifs that appear!
+Do a search on your favorite TV show and see all the amazing gifs that appear!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
